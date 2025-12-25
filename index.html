@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <h1>💰 Expense Tracker</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <!-- FORM -->
+  <div class="card">
+    <form id="expenseForm">
+      <input type="date" id="date" required>
+      <input type="text" id="title" placeholder="Nama pengeluaran" required>
+      <input type="number" id="amount" placeholder="Nominal" required>
+
+      <div class="form-actions">
+        <button type="submit">Simpan</button>
+        <button type="button" id="cancelEdit" class="btn-cancel hidden">
+          Batal Edit
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- TOTAL & INVOICE -->
+  <div class="card">
+    <h3>Total Pengeluaran</h3>
+    <p id="total">Rp 0</p>
+    <button id="downloadPDF">⬇ Download Invoice (Semua Bulan)</button>
+  </div>
+
+  <!-- LIST -->
+  <div class="card">
+    <h3>Daftar Pengeluaran</h3>
+    <ul id="expenseList"></ul>
+  </div>
+
+  <!-- CHART -->
+  <div class="card">
+    <h3>📊 Grafik Pengeluaran</h3>
+    <canvas id="expenseChart"></canvas>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
